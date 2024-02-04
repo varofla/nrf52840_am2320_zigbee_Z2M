@@ -11,6 +11,7 @@
 // For more help, browse the DeviceTree documentation at https: //docs.zephyrproject.org/latest/guides/dts/index.html
 // You can also visit the nRF DeviceTree extension documentation at https: //nrfconnect.github.io/vscode-nrf-connect/devicetree/nrfdevicetree.html
 &arduino_i2c {
+  compatible = "nordic,nrf-twim";
   am2320: am2320@5c {
     compatible = "i2c-device";
     reg = <0x5c>;
