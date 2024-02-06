@@ -59,7 +59,7 @@ static void s_boo_work_hd(struct k_work *) {
  * @brief ISR과 같이 우선순위가 높은 Thread
  *
  */
-static void s_foo_thread(void) {
+static void s_test_thread(void) {
   k_work_queue_start(&s_work_queue, s_foo_work_stack, K_THREAD_STACK_SIZEOF(s_foo_work_stack), FOO_WORK_QUEUE_PRIORITY, NULL);
 
   for (;;) {
@@ -71,4 +71,4 @@ static void s_foo_thread(void) {
   }
 }
 
-K_THREAD_DEFINE(foo_thread_id, FOO_THREAD_STACKSIZE, s_foo_thread, NULL, NULL, NULL, FOO_THREAD_PRIORITY, 0, 0);
+K_THREAD_DEFINE(foo_thread_id, FOO_THREAD_STACKSIZE, s_test_thread, NULL, NULL, NULL, FOO_THREAD_PRIORITY, 0, 0);
